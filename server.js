@@ -6,12 +6,12 @@ var Strategy = require('passport-salesforce-oauth2').Strategy;
 passport.use(new Strategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: 'https://localhost:3000/login/salesforce/return'
+    callbackURL: 'http://localhost:3000/login/salesforce/return'
   },
   function(accessToken, refreshToken, profile, cb) {
   
     return cb(null, profile);
-    
+
   }));
 
 
